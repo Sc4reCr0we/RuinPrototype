@@ -8,6 +8,10 @@ public class Ability : MonoBehaviour{
 	public float cooldown;
 	public float range;
 	public float speed;
+	public float damage;
+	public float pushback;
+	public float pushStack;
+
 	public bool isReady;
 	public bool isCast;
 	public Transform instance;
