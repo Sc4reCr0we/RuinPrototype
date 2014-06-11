@@ -54,11 +54,13 @@
      <Compile Include="Assets\Scripts\FireballController.cs" />
      <Compile Include="Assets\Scripts\Fireball_emil.cs" />
      <Compile Include="Assets\Scripts\MoveScript.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\Player\HealthScript.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\Player\PushbackScript.cs" />
+     <Compile Include="Assets\Scripts\Player\slotManager.cs" />
      <Compile Include="Assets\Scripts\fireball_behave.cs" />
      <Compile Include="Assets\Scripts\shotScript.cs" />
-     <Compile Include="Assets\Scripts\slotManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,7 +7,7 @@ public class slotManager : MonoBehaviour {
 	public Ability E_slot;
 	public Ability R_slot;
 	public Ability Spc_slot;
-	public GameObject player;
+
 	private Ability currentSlot;
 	private Animator animator;
 
@@ -55,7 +55,7 @@ public class slotManager : MonoBehaviour {
 	}
 
 	private void castdelay(){
-		currentSlot.cast(player);
+		currentSlot.cast(gameObject);
 		}
 
 
