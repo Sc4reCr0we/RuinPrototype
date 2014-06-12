@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\PushbackScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\Fireball_behave.cs" Line="33" Column="48" />
-      <File FileName="Assets\Scripts\Player\PushbackScript.cs" Line="21" Column="4" />
+      <File FileName="Assets\Scripts\Player\PushbackScript.cs" Line="32" Column="40" />
+      <File FileName="Assets\Scripts\fireball_behave.cs" Line="42" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

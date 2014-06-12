@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float turnSpeed;
 	private Animator animator;
 	private bool canMove = true;
+	private bool isPushedback = false;
 	
 	void Start ()
 	{
@@ -52,7 +53,7 @@ public class PlayerMovement : MonoBehaviour {
 		
 		float targetAngle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
 		
-		if (canMove && (Input.GetKey("d") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("w"))) 
+		if (canMove && !isPushedback && (Input.GetKey("d") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("w"))) 
 		{
 			
 			if(animator.GetBool("moving") == false)

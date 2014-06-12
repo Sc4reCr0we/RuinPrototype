@@ -7,8 +7,12 @@ public class PushbackScript : MonoBehaviour {
 	public float minStack;
 	public float pushStack;
 
-	public void pushPlayer(Vector2 hitLocation, float pushback, float stackAdd){
-		gameObject.rigidbody2D.AddForceAtPosition (pushback+(pushback*pushStack), hitLocation, ForceMode.Impulse);
+	public void pushPlayer(Vector3 hitLocation, float pushback, float stackAdd,Transform self){
+		Vector2 direction = self.position - transform.position;
+		Debug.Log("pushPlayer2");
+		pushback *= 1000f;
+		Debug.Log (direction.normalized * (pushback + pushback * pushStack));
+		rigidbody2D.AddForce(direction.normalized*(pushback+pushback*pushStack));
 		addStack (stackAdd);
 	}
 
@@ -21,7 +25,7 @@ public class PushbackScript : MonoBehaviour {
 		if (pushStack < minStack) {
 			pushStack = minStack;
 		}
-		rigidbody2D.add
+
 
 	}
 
