@@ -8,12 +8,12 @@ public class fireball_behave : MonoBehaviour {
 	public float pushback;
 	public float pushStack;
 
-	// Use this for initialization
+	// Use this for initializationd
 	void Start () {
 	
 	}
 	
-	// Update is called once per frame
+	// Update is called once per framee
 	void Update () {
 
 	}
@@ -27,11 +27,12 @@ public class fireball_behave : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
-		Debug.Log ("hit!");
+
 		if (other != null && other.gameObject.tag== "Player") {
 			other.gameObject.GetComponent<HealthScript> ().setHealth (damage);
-			other.gameObject.GetComponent<PushbackScript> ().pushPlayer (other.contacts, pushback,pushStack);
-				Destroy (gameObject);
+			other.gameObject.GetComponent<PushbackScript> ().pushPlayer (other.contacts[0].point,pushback,pushStack,transform);
+			Debug.Log ("hit!");
+			Destroy (gameObject);
 		}
 		if (other != null && other.gameObject.tag== "Ability") {
 			Destroy (gameObject);

@@ -6,9 +6,9 @@ public class Fireball : Ability{
 	private float castTurnSpeed = 100;
 
 
-	public override void cast(GameObject playerID1){
+	public override void cast(GameObject playerID){
 		isReady = false;
-		instanceCreate (playerID1);
+		instanceCreate (playerID);
 		Invoke ("cooldownCount", (cooldown+casttime));
 	}
 
