@@ -10,7 +10,6 @@ public class PushbackScript : MonoBehaviour {
 	public void pushPlayer(Vector3 hitLocation, float pushback, float stackAdd,Transform self){
 		Vector2 direction = self.position - transform.position;
 		Debug.Log("pushPlayer2");
-		pushback *= 1000f;
 		Debug.Log (direction.normalized * (pushback + pushback * pushStack));
 		rigidbody2D.AddForce(direction.normalized*(pushback+pushback*pushStack));
 		addStack (stackAdd);
