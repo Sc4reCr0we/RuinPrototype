@@ -6,6 +6,7 @@ public class PushbackScript : MonoBehaviour {
 	public float maxStack;
 	public float minStack;
 	public float pushStack;
+<<<<<<< HEAD
 	public float pushbackSpeed = 100f;
 	
 	private float pushbackDistance;
@@ -22,6 +23,17 @@ public class PushbackScript : MonoBehaviour {
 
 		
 		
+=======
+
+	public void pushPlayer(Vector3 hitLocation, float pushback, float stackAdd,Transform self){
+		rigidbody2D.velocity = Vector2.zero;
+		float pushbackCalced;
+		pushbackCalced = pushback + (pushback * pushStack);
+		Vector2 direction = self.position - transform.position;
+		rigidbody2D.AddForce(-direction.normalized*pushbackCalced,ForceMode2D.Impulse);
+		addStack (stackAdd);
+		gameObject.GetComponent<PlayerMovement> ().setPushedback (pushbackCalced);
+>>>>>>> 240d914b3080496f3231c2a6fd509138b4edc768
 	}
 
 
@@ -40,7 +52,7 @@ public class PushbackScript : MonoBehaviour {
 	}
 
 	private void addStack(float stackAdd){
-		pushStack += stackAdd;
+		pushStack += stackAdd/100;
 	}
 
 	// Use this for initialization
