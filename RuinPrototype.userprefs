@@ -1,5 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Arena\ElectricityGenerator.cs">
     <Files>
       <File FileName="Assets\Scripts\Player\PlayerMovement.cs" Line="53" Column="53" />
@@ -10,6 +11,14 @@
       <File FileName="Assets\Scripts\Player\HealthScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Arena\ElectricityKiller.cs" Line="18" Column="24" />
       <File FileName="Assets\Scripts\Arena\ElectricityGenerator.cs" Line="18" Column="3" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Arena\Destructable\HealthScriptDestruct.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Player\PushbackScript.cs" Line="48" Column="1" />
+      <File FileName="Assets\Scripts\fireball_behave.cs" Line="43" Column="25" />
+      <File FileName="Assets\Scripts\Player\PlayerMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Arena\Destructable\HealthScriptDestruct.cs" Line="5" Column="30" />
+>>>>>>> 803a675f163525f10a6ee8644f5f674121d98eec
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
