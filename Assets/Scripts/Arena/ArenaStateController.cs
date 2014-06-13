@@ -5,10 +5,13 @@ public class ArenaStateController : MonoBehaviour {
 	public float firstStateChangeTimer;
 	public float secondStateChangeTimer;
 	public float thirdStateChangeTimer;
+	public float colliderRadiusSpeed;
 	
-	private float colliderRadius;	
+	private float colliderRadius;
+	private float currentColliderRadius;
 	private Animator animator;
 	private CircleCollider2D collider;
+	private string currentState = "state_1";
 
 	// Use this for initialization
 	void Start () 
@@ -24,13 +27,18 @@ public class ArenaStateController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if(currentState == "state_2")
+			collider.radius = Mathf.Lerp (collider.radius, colliderRadius * 0.75f, colliderRadiusSpeed * Time.deltaTime);
 	
 	}
 
 	public void isState_2()
 	{
 		animator.SetBool ("isState_2", true);
-		collider.radius = colliderRadius * 0.75f;
+		//collider.radius = colliderRadius * 0.75f;
+		currentColliderRadius = collider.radius;
+		currentState = "state_2";
+
 
 	}
 
@@ -50,13 +58,15 @@ public class ArenaStateController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.gameObject.tag == "Player")
-						Debug.Log ("Player Entered Arena");
+			Debug.Log ("Player Entered Arena");
 	}
-
+	
 	void OnTriggerExit2D(Collider2D collider)
 	{
 		if (collider.gameObject.tag == "Player")
 			Debug.Log ("WARNING! Player is Outside Arena");
 	}
+
+
 
 }
