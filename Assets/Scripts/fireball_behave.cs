@@ -37,5 +37,10 @@ public class fireball_behave : MonoBehaviour {
 		if (other != null && other.gameObject.tag== "Ability") {
 			Destroy (gameObject);
 		}
+
+		if (other != null && other.gameObject.tag == "Destructable") {
+			other.gameObject.GetComponent<HealthScriptDestruct>().setHealth(damage);
+			Destroy (gameObject);
+		}
 	}
 }
