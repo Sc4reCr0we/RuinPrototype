@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	void Start ()
 	{
-		speed *= 100f;
+		//speed *= 100f;
 		animator = GetComponent<Animator> ();
 	}
 	
@@ -46,9 +46,9 @@ public class PlayerMovement : MonoBehaviour {
 			direction -= Vector3.up;
 		}
 		
-		if (direction != Vector3.zero && canMove)
+		if (direction != Vector3.zero && canMove && !isPushedback)
 		{
-			rigidbody2D.velocity = (direction.normalized*speed)*Time.deltaTime;
+			rigidbody2D.AddForce(direction.normalized*speed);
 		}
 		
 		float targetAngle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
@@ -94,5 +94,27 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		Debug.Log ("canmove, true");
 		canMove = true;
+	}
+
+	public void setPushedback(float dist){
+		Debug.Log("isPushed");
+		isPushedback = true;
+		calcPushTime (dist);
+	}
+
+	public void setPushStop(){
+		Debug.Log("is not Pushed");
+		isPushedback = false;
+		}
+
+	private void calcPushTime(float dist){
+		float speedTemp;
+		float timeTemp;
+		speedTemp = rigidbody2D.velocity.magnitude;
+
+		timeTemp = dist / speedTemp;
+		if (isPushedback) {
+			Invoke("setPushStop",1f);
+				}
 	}
 }
