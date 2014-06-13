@@ -8,7 +8,6 @@ public class ArenaStateController : MonoBehaviour {
 	public float colliderRadiusSpeed;
 	
 	private float colliderRadius;
-	private float currentColliderRadius;
 	private Animator animator;
 	private CircleCollider2D collider;
 	private string currentState = "state_1";
@@ -29,14 +28,18 @@ public class ArenaStateController : MonoBehaviour {
 	{
 		if(currentState == "state_2")
 			collider.radius = Mathf.Lerp (collider.radius, colliderRadius * 0.75f, colliderRadiusSpeed * Time.deltaTime);
+
+		if(currentState == "state_3")
+			collider.radius = Mathf.Lerp (collider.radius, colliderRadius * 0.5f, colliderRadiusSpeed * Time.deltaTime);
+
+		if(currentState == "state_4")
+			collider.radius = Mathf.Lerp (collider.radius, colliderRadius * 0.25f, colliderRadiusSpeed * Time.deltaTime);
 	
 	}
 
 	public void isState_2()
 	{
 		animator.SetBool ("isState_2", true);
-		//collider.radius = colliderRadius * 0.75f;
-		currentColliderRadius = collider.radius;
 		currentState = "state_2";
 
 
@@ -46,25 +49,26 @@ public class ArenaStateController : MonoBehaviour {
 	{
 
 		animator.SetBool ("isState_3", true);
-		collider.radius = colliderRadius * 0.5f;
+		currentState = "state_3";
 	}
 
 	public void isState_4()
 	{
 		animator.SetBool ("isState_4", true);
-		collider.radius = colliderRadius * 0.25f;
+		currentState = "state_4";
 	}
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
 		if (collider.gameObject.tag == "Player")
-			Debug.Log ("Player Entered Arena");
+			collider.GetComponent<OutsideArenaDamage>().isOutside = false;
+
 	}
 	
 	void OnTriggerExit2D(Collider2D collider)
 	{
 		if (collider.gameObject.tag == "Player")
-			Debug.Log ("WARNING! Player is Outside Arena");
+			collider.GetComponent<OutsideArenaDamage>().isOutside = true;
 	}
 
 

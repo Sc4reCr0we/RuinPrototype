@@ -46,13 +46,11 @@ public class PlayerMovement : MonoBehaviour {
 			direction -= Vector3.up;
 		}
 		
-<<<<<<< HEAD
-		if (canMove)
-=======
+
 		if (direction != Vector3.zero && canMove && !isPushedback)
->>>>>>> 240d914b3080496f3231c2a6fd509138b4edc768
+
 		{
-			rigidbody2D.AddForce(direction.normalized*speed);
+			rigidbody2D.velocity = direction.normalized*speed;
 		}
 		
 		float targetAngle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
