@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour {
 	
 	void Start ()
 	{
+		speed *= 100f;
 		animator = GetComponent<Animator> ();
-		speed *= 1000f;
 	}
 	
 	void Update () 
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour {
 		
 		if (direction != Vector3.zero && canMove)
 		{
-			rigidbody2D.AddForce(direction.normalized*speed*Time.deltaTime);
+			rigidbody2D.velocity = (direction.normalized*speed)*Time.deltaTime;
 		}
 		
 		float targetAngle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
@@ -65,11 +65,11 @@ public class PlayerMovement : MonoBehaviour {
 				Quaternion.Slerp (transform.rotation,
 				                  Quaternion.Euler (0, 0, targetAngle),
 				                  turnSpeed * Time.deltaTime);
-		} 
-		
+		}
 		else if (animator.GetBool ("moving") == true) 
 		{
 			animator.SetBool ("moving", false);
+			rigidbody2D.velocity = Vector3.zero;
 		}
 		
 	}
