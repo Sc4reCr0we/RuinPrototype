@@ -48,10 +48,13 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Abilities\Fireball.cs" />
      <Compile Include="Assets\Scripts\Abilities\Gust.cs" />
+     <Compile Include="Assets\Scripts\Arena\ArenaStateController.cs" />
+     <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Classes\Ability.cs" />
      <Compile Include="Assets\Scripts\FireballController.cs" />
      <Compile Include="Assets\Scripts\Fireball_emil.cs" />
      <Compile Include="Assets\Scripts\MoveScript.cs" />
+     <Compile Include="Assets\Scripts\Player\ArenaCollisionChecker.cs" />
      <Compile Include="Assets\Scripts\Player\HealthScript.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
