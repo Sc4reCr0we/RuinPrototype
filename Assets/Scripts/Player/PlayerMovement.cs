@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour {
 			direction -= Vector3.up;
 		}
 		
-		if (direction != Vector3.zero && canMove)
+		if (canMove)
 		{
 			rigidbody2D.velocity = (direction.normalized*speed)*Time.deltaTime;
 		}

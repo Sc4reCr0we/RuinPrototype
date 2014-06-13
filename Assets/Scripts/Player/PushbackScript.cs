@@ -6,14 +6,25 @@ public class PushbackScript : MonoBehaviour {
 	public float maxStack;
 	public float minStack;
 	public float pushStack;
+	public float pushbackSpeed = 100f;
+	
+	private float pushbackDistance;
+	private Vector3 pushbackDirection;
+	private bool isPushedback = false;	
 
-	public void pushPlayer(Vector3 hitLocation, float pushback, float stackAdd,Transform self){
-		Vector2 direction = self.position - transform.position;
-		Debug.Log("pushPlayer2");
-		Debug.Log (direction.normalized * (pushback + pushback * pushStack));
-		rigidbody2D.AddForce(direction.normalized*(pushback+pushback*pushStack));
+	public void pushPlayer(Vector3 hitLocation, float pushback, float stackAdd,Transform self)
+	{
+		pushbackDirection = self.position - transform.position;
+		pushbackDistance += pushback;
+		isPushedback = true;
 		addStack (stackAdd);
+		pushbackDirection.Normalize ();
+
+		
+		
 	}
+
+
 
 	private void checkStack(){
 
@@ -40,6 +51,11 @@ public class PushbackScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		checkStack ();
-
+		//pushbackDistance = Mathf.Lerp (pushbackDistance, 0f, pushbackSpeed * Time.deltaTime);
+		if(isPushedback)
+		{
+			rigidbody2D.velocity = pushbackDirection * (pushbackDistance + pushbackDistance * pushStack);
+	
+		}
 	}
 }
