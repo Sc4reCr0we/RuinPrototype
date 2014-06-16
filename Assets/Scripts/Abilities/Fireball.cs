@@ -19,7 +19,7 @@ public class Fireball : Ability{
 		float angle 			= Mathf.Atan2 (fireballDir.y, fireballDir.x) * Mathf.Rad2Deg;
 
 		var fireballID 					= Instantiate (instance, currentPosition + fireballDir/2, Quaternion.identity) as Transform ;
-		fireballID.GetComponent<fireball_behave> ().onCast (fireballDir,speed,angle,range);
+		fireballID.GetComponent<fireball_behave> ().onCast (fireballDir,speed,angle);
 		fireballID.GetComponent<fireball_behave> ().speed = speed;
 		fireballID.GetComponent<fireball_behave> ().damage = damage;
 		fireballID.GetComponent<fireball_behave> ().range = range;
