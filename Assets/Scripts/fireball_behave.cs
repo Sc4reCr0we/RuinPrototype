@@ -31,7 +31,6 @@ public class fireball_behave : MonoBehaviour {
 		if (other != null && other.gameObject.tag== "Player") {
 			other.gameObject.GetComponent<HealthScript> ().setHealth (damage);
 			other.gameObject.GetComponent<PushbackScript> ().pushPlayer (other.contacts[0].point,pushback,pushStack,transform);
-			Debug.Log ("hit!");
 			Destroy (gameObject);
 		}
 		if (other != null && other.gameObject.tag== "Ability") {

@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		
 
-		if (direction != Vector3.zero && canMove && !isPushedback)
+		if (canMove && !isPushedback)
 
 		{
 			rigidbody2D.velocity = direction.normalized*speed;
@@ -68,11 +68,12 @@ public class PlayerMovement : MonoBehaviour {
 				                  Quaternion.Euler (0, 0, targetAngle),
 				                  turnSpeed * Time.deltaTime);
 		}
-		else if (animator.GetBool ("moving") == true) 
+		else if (animator.GetBool ("moving") == true && !isPushedback) 
 		{
 			animator.SetBool ("moving", false);
-			rigidbody2D.velocity = Vector3.zero;
+			rigidbody2D.velocity = Vector2.zero;
 		}
+
 		
 	}
 	
@@ -88,24 +89,20 @@ public class PlayerMovement : MonoBehaviour {
 	
 	public void castingEnd()
 	{
-		Debug.Log ("canmove, true");
 		canMove = true;
 	}
 
 	public void castingEnd2()
 	{
-		Debug.Log ("canmove, true");
 		canMove = true;
 	}
 
 	public void setPushedback(float dist){
-		Debug.Log("isPushed");
 		isPushedback = true;
 		calcPushTime (dist);
 	}
 
 	public void setPushStop(){
-		Debug.Log("is not Pushed");
 		isPushedback = false;
 		}
 

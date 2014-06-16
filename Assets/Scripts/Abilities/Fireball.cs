@@ -7,13 +7,10 @@ public class Fireball : Ability{
 
 
 	public override void cast(GameObject playerID){
-		isReady = false;
 		instanceCreate (playerID);
-		Invoke ("cooldownCount", (cooldown+casttime));
 	}
 
 	public override void instanceCreate(GameObject playerID){
-		Debug.Log ("new method running");
 		Vector3 currentPosition = playerID.transform.position;
 		Vector3 mousePos 		= Camera.main.ScreenToWorldPoint( Input.mousePosition );
 		Vector3 fireballDir		= mousePos - currentPosition;

@@ -15,28 +15,16 @@ public class Ability : MonoBehaviour{
 	public bool isReady;
 	public bool isCast;
 	public Transform instance;
-
-	private void castCheck(){
-		isCast = Input.GetButtonDown("Fire1");
-	}
-
-	public bool getIsCasting(){
-		castCheck();
-		return isCast;
-	}
-
-	public void cooldownCount(){
-		isReady = true;
+	
+	public void setReady(bool ready){
+		isReady = ready;
 	}
 
 	public virtual void cast(GameObject playerID){
-		isReady = false;
 		instanceCreate (playerID);
-		Invoke ("cooldownCount", (cooldown+casttime));
 	}
 
 	public virtual void instanceCreate(GameObject playerID){
-		Debug.Log("old running");
 		var castedAbility = Instantiate(instance) as Transform;
 		castedAbility.position = playerID.transform.position;
 	}

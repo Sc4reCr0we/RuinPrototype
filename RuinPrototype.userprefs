@@ -1,10 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Arena\ArenaStateController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\PlayerMovement.cs">
     <Files>
-      <File FileName="Assets\Scripts\Arena\Destructable\Arena1\energyballScript.cs" Line="15" Column="32" />
-      <File FileName="Assets\Scripts\Arena\Destructable\Arena1\HealthScriptDestruct.cs" Line="27" Column="4" />
-      <File FileName="Assets\Scripts\Arena\ArenaStateController.cs" Line="72" Column="3" />
+      <File FileName="Assets\Scripts\Player\PushbackScript.cs" Line="17" Column="77" />
+      <File FileName="Assets\Scripts\fireball_behave.cs" Line="31" Column="58" />
+      <File FileName="Assets\Scripts\Abilities\Fireball.cs" Line="10" Column="15" />
+      <File FileName="Assets\Scripts\Classes\Ability.cs" Line="27" Column="58" />
+      <File FileName="Assets\Scripts\Player\slotManager.cs" Line="42" Column="29" />
+      <File FileName="Assets\Scripts\Player\PlayerMovement.cs" Line="105" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
