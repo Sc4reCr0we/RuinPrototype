@@ -29,6 +29,7 @@ public class HealthScriptDestruct : MonoBehaviour {
 
 	private void whenBroken(){
 		if (!isWhole) {
+			GetComponentInParent<energyballScript>().generatorDown(1f);
 			Destroy (gameObject);
 		}
 	}                
