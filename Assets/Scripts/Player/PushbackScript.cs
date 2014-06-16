@@ -8,14 +8,14 @@ public class PushbackScript : MonoBehaviour {
 	public float pushStack;
 
 	public void pushPlayer(Vector3 hitLocation, float pushback, float stackAdd,Transform self){
-		rigidbody2D.velocity = Vector2.zero;
 		float pushbackCalced;
 		pushbackCalced = pushback + (pushback * pushStack);
-		Vector2 direction = self.position - transform.position;
-		rigidbody2D.AddForce(-direction.normalized*pushbackCalced,ForceMode2D.Impulse);
-		addStack (stackAdd);
+		Vector2 dirr = self.position - transform.position;
 		gameObject.GetComponent<PlayerMovement> ().setPushedback (pushbackCalced);
-
+		rigidbody2D.velocity = Vector2.zero;
+		rigidbody2D.angularVelocity = 0f;
+		rigidbody2D.AddForce(-dirr.normalized*pushbackCalced,ForceMode2D.Impulse);
+		addStack (stackAdd);
 	}
 
 
