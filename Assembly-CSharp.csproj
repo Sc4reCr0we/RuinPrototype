@@ -200,6 +200,10 @@
      <Compile Include="Assets\Scripts\Player\slotManager.cs" />
      <Compile Include="Assets\Scripts\fireball_behave.cs" />
      <Compile Include="Assets\Scripts\shotScript.cs" />
+     <Compile Include="Assets\Scripts\SpecialEffectsHelper.cs" />
+     <Compile Include="Assets\Scripts\fireball_behave.cs" />
+     <Compile Include="Assets\Scripts\shotScript.cs" />
+     <Compile Include="Assets\Scripts\sortingLayer.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.6.3.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />

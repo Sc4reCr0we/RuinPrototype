@@ -6,6 +6,7 @@ public class ArenaStateController : MonoBehaviour {
 	public float secondStateChangeTimer;
 	public float thirdStateChangeTimer;
 	public float colliderRadiusSpeed;
+	private bool isState4 = false;
 	
 	private float colliderRadius;
 	private Animator animator;
@@ -54,6 +55,7 @@ public class ArenaStateController : MonoBehaviour {
 
 	public void isState_4()
 	{
+		isState4 = true;
 		animator.SetBool ("isState_4", true);
 		currentState = "state_4";
 	}
@@ -71,5 +73,7 @@ public class ArenaStateController : MonoBehaviour {
 			collider.GetComponent<OutsideArenaDamage>().isOutside = true;
 	}
 
-
+	public bool getState(){
+		return isState4;
+	}
 }
