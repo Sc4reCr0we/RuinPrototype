@@ -183,9 +183,9 @@
      <Compile Include="Assets\Scripts\Abilities\Fireball.cs" />
      <Compile Include="Assets\Scripts\Abilities\Gust.cs" />
      <Compile Include="Assets\Scripts\Arena\ArenaStateController.cs" />
+     <Compile Include="Assets\Scripts\Arena\Destructable\HealthScriptDestruct.cs" />
      <Compile Include="Assets\Scripts\Arena\ElectricityGenerator.cs" />
      <Compile Include="Assets\Scripts\Arena\ElectricityKiller.cs" />
-     <Compile Include="Assets\Scripts\Arena\Destructable\HealthScriptDestruct.cs" />
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Classes\Ability.cs" />
      <Compile Include="Assets\Scripts\FireballController.cs" />
