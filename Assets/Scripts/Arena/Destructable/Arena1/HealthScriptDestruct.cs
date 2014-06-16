@@ -44,6 +44,9 @@ public class HealthScriptDestruct : MonoBehaviour {
 		checkHealth ();
 		checkWhole ();
 		whenBroken ();
+		if (GetComponentInParent<ArenaStateController> ().getState ()) {
+			isWhole=false;
+		}
 	
 	}
 }
